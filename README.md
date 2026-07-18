@@ -1,25 +1,47 @@
-# 360 – Vollrotationsmodul · iki1uc
+# NC‑SYSTEM · 4‑Zylinder‑Meta‑Navigation
 
-## Zweck
-360 ist das globale Rotationsmodul der IKI‑Engine.
-Es rotiert alle Achsen, Dimensionen und Module im vollständigen 360°-Raum.
+Das NC‑SYSTEM besteht aus vier Zylindern:
 
-## Struktur
-- NAME: 360
-- DIM: ROT
-- DNA: Α64
-- Achsenmatrix: 6×6
-- Felder pro Achse: 64
-- Rotation: 360°
+1. Navigation (NC‑LAGE‑SYSTEM)  
+2. Rotation (360‑SYSTEM)  
+3. Zeitlagen (NE‑GHOST)  
+4. Meta‑Form (GEO / MRPH / MYSTERY)
 
-## Rolle
-360 verbindet AXI, 6d, ANKER und API zu einem vollständigen Rotationssystem.
+---
 
-## Router
-- AXI‑ATOR: aktiv
-- TriAxiom: aktiv
-- RESPO‑AXI‑LINK.NET: verbunden
+## Rollen
+
+MASTER = ROOM
+SLAVE  = GEO · MRPH · MYSTERY
+WECHSEL = MRPH
+
+---
+
+## Dateien
+
+Alle Dateien wurden neu sortiert:
+
+- C.room  
+- GEO.room  
+- MRPH.room  
+- MYSTERY.room  
+- 6D‑Baum.raw  
+- 6E → 6D.tech  
+- NC² / NC² (1)  
+- NC²octa².dual  
+- NC²octa²□.merge  
+- NC²□.lock / sync  
+- NC²□octa³.align  
+- NE‑NC3×3.room  
+- NE‑NC6eY6D.room  
+- NE‑NC9×9.room  
+- level‑pyramiden‑7.csv (alle Varianten)  
+- ghost.html  
+- index.html  
+- ID.html  
+
+---
 
 ## Status
-STATE = STABIL  
-READY = 100%
+
+**STABIL · READY 100%**
