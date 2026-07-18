@@ -1,44 +1,32 @@
-# NC‑SYSTEM · 4‑Zylinder‑Meta‑Navigation
+# NC‑SYSTEM · ZYL‑Navigator 2.0
 
 Das NC‑SYSTEM besteht aus vier Zylindern:
 
-1. Navigation (NC‑LAGE‑SYSTEM)  
-2. Rotation (360‑SYSTEM)  
-3. Zeitlagen (NE‑GHOST)  
-4. Meta‑Form (GEO / MRPH / MYSTERY)
+1. Navigation  
+2. Rotation  
+3. Zeitlagen  
+4. Meta‑Form + Pyramiden
 
 ---
 
 ## Rollen
 
 MASTER = ROOM
-SLAVE  = GEO · MRPH · MYSTERY
+SLAVE  = GEO · MYSTERY · C.room
 WECHSEL = MRPH
+
 
 ---
 
-## Dateien
+## Struktur
 
 Alle Dateien wurden neu sortiert:
 
-- C.room  
-- GEO.room  
-- MRPH.room  
-- MYSTERY.room  
-- 6D‑Baum.raw  
-- 6E → 6D.tech  
-- NC² / NC² (1)  
-- NC²octa².dual  
-- NC²octa²□.merge  
-- NC²□.lock / sync  
-- NC²□octa³.align  
-- NE‑NC3×3.room  
-- NE‑NC6eY6D.room  
-- NE‑NC9×9.room  
-- level‑pyramiden‑7.csv (alle Varianten)  
-- ghost.html  
-- index.html  
-- ID.html  
+- ZYL0 → ROOT‑CORE  
+- ZYL1 → Navigation  
+- ZYL2 → Rotation  
+- ZYL3 → Zeitlagen  
+- ZYL4 → Meta‑Form + Pyramiden  
 
 ---
 
