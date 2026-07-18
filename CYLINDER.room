@@ -10,3 +10,9 @@ SCAN.PIPELINE:
   NC².matrix.validate()
 
   REPORT.status()
+IMPORT ZYL/AXIOM.scan
+
+IF CYL.inner.scan == COMPLETE:
+    REPORT "AXIOM-SCAN OK"
+ELSE:
+    REPORT "AXIOM-SCAN PARTIAL"
