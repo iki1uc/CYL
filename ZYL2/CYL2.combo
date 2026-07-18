@@ -1,0 +1,8 @@
+# CYL2.combo
+LOAD ZYL2/360-System.html
+LOAD ZYL2/6D-Baum.raw
+LOAD ZYL2/6E → 6D.tech
+LOAD ZYL2/STATIONEN.raw
+
+AXIS = 6D
+ENGINE = 6E
