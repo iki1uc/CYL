@@ -1,0 +1,18 @@
+# CYL4.combo
+LOAD ZYL4/C.room
+LOAD ZYL4/GEO.room
+LOAD ZYL4/MRPH.room
+LOAD ZYL4/MYSTERY.room
+
+LOAD ZYL4/level-pyramiden-7.csv
+LOAD ZYL4/level-pyramiden-7 (1).csv
+LOAD ZYL4/level-pyramiden-7 (2).csv
+LOAD ZYL4/level-pyramiden-7 (3).csv
+LOAD ZYL4/level-pyramiden-7 (4).csv
+LOAD ZYL4/level-pyramiden-7 (5).csv
+LOAD ZYL4/level-pyramiden-7 (6).csv
+LOAD ZYL4/level-pyramiden-7 (7).csv
+
+MASTER = ROOM
+SLAVE = GEO, MYSTERY, C.room
+WECHSEL = MRPH
