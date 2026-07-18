@@ -1,1 +1,7 @@
+C.room = Core‑Meta‑Zylinder
+DIM = META
+ROLE = Bindeglied zwischen NC² und GEO/MRPH/MYSTERY
+MASTER = ROOM
+SLAVE = GEO / MRPH / MYSTERY
+WECHSEL = MRPH
 
