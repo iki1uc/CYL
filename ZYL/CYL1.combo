@@ -1,0 +1,13 @@
+# CYL1.combo
+LOAD ZYL1/X.room.IN
+LOAD ZYL1/X.room.OUT
+LOAD ZYL1/X.room.CORE
+
+LOAD ZYL1/NC²/*
+LOAD ZYL1/NC²octa².dual
+LOAD ZYL1/NC²octa²□.merge
+LOAD ZYL1/NC²□.lock
+LOAD ZYL1/NC²□.sync
+LOAD ZYL1/NC²□octa³.align
+
+MASTER = ROOM
