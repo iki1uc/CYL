@@ -1,0 +1,12 @@
+AXIOM.SCAN:
+  AXIOM DA → rotate.down
+  AXIOM BEN → rotate.up
+  AXIOM NE → switch.axis
+
+  IF DA → BEN AND BEN → DA:
+      CYL.inner.scan = TRUE
+      CYL.inner.map = COMPLETE
+  ELSE:
+      CYL.inner.scan = PARTIAL
+
+RETURN CYL.inner.scan
