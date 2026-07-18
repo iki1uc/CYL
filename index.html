@@ -2,49 +2,54 @@
 <html lang="de">
 <head>
 <meta charset="UTF-8">
-<title>360 – Vollrotation · iki1uc</title>
+<title>NC‑SYSTEM · 4‑Zylinder‑Meta‑Navigation</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-body { background:#000; color:#0f0; font-family:monospace; padding:40px; }
-h1 { color:#0f0; letter-spacing:4px; margin-bottom:30px; }
-.block { background:#111; border:1px solid #333; padding:25px; margin-bottom:30px; border-radius:8px; }
-.title { font-size:22px; color:#6cf; margin-bottom:10px; }
-a { color:#6cf; text-decoration:none; font-weight:bold; }
-pre { background:#000; border-left:3px solid #6cf; padding:15px; margin-top:10px; white-space:pre-wrap; }
+  body { background:#000; color:#e6e6e6; font-family:Arial, sans-serif; margin:0; padding:0; }
+  h1 { text-align:center; padding:20px; color:#00eaff; }
+  .zyl { background:#111; margin:20px; padding:20px; border-radius:10px; border:1px solid #333; }
+  .zyl h2 { color:#00ff9d; }
+  .module { background:#222; padding:12px; margin:10px 0; border-radius:8px; }
+  .module a { color:#00eaff; text-decoration:none; font-weight:bold; }
+  .master { color:#00ffea; font-weight:bold; }
+  .slave { color:#ff6c6c; }
+  .switch { color:#ffe600; font-weight:bold; }
 </style>
 </head>
 
 <body>
 
-<h1>360 – Vollrotation · iki1uc</h1>
+<h1>NC‑SYSTEM · 4‑Zylinder‑Meta‑Navigation</h1>
 
-<div class="block">
-    <div class="title">360°-System</div>
-    <p>Dieses Modul rotiert alle Achsen, Dimensionen und Module im vollständigen 360°-Raum.</p>
+<div class="zyl">
+  <h2>ZYLINDER‑1 · Navigation</h2>
+  <div class="module"><a href="index.html">NC‑LAGE‑SYSTEM</a></div>
+  <div class="module"><a href="ID.html">ID‑Kern</a></div>
 </div>
 
-<div class="block">
-    <div class="title">Identität</div>
-    <p><a href="ID.html">→ 360‑Identität öffnen</a></p>
+<div class="zyl">
+  <h2>ZYLINDER‑2 · Rotation</h2>
+  <div class="module"><a href="360‑System.html">360‑System</a></div>
+  <div class="module"><a href="6D‑Baum.raw">6D‑Baum</a></div>
 </div>
 
-<div class="block">
-    <div class="title">360°-Daten</div>
-    <pre>
-Rotation = 360°
-Achsenmatrix = 6×6
-Dimensionen = 6D
-Felder pro Achse = 64
-Ausnutzung = 100%
-    </pre>
+<div class="zyl">
+  <h2>ZYLINDER‑3 · Zeitlagen</h2>
+  <div class="module"><a href="ghost.html">Ghost‑Scan</a></div>
+  <div class="module"><a href="NE‑NC3×3.room">NE‑3×3</a></div>
 </div>
 
-<div class="block">
-    <div class="title">Module</div>
-    <a href="../AXI/index.html">AXI</a>
-    <a href="../6d/index.html">6d</a>
-    <a href="../ANKER/index.html">ANKER</a>
-    <a href="../API/index.html">API</a>
+<div class="zyl">
+  <h2>ZYLINDER‑4 · Meta‑Form</h2>
+  <p class="master">MASTER: ROOM</p>
+  <p class="slave">SLAVE: GEO · MRPH · MYSTERY</p>
+  <p class="switch">WECHSEL: MRPH</p>
+
+  <div class="module"><a href="C.room">C.room (Meta‑Core)</a></div>
+  <div class="module"><a href="GEO.room">GEO.room</a></div>
+  <div class="module"><a href="MRPH.room">MRPH.room</a></div>
+  <div class="module"><a href="MYSTERY.room">MYSTERY.room</a></div>
 </div>
 
 </body>
