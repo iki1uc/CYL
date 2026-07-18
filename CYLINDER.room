@@ -1,1 +1,22 @@
+# CYLINDER.room
+# Finaler Cylinder-Start
+
+IMPORT CYL0.combo
+IMPORT CYL1.combo
+IMPORT CYL2.combo
+IMPORT CYL3.combo
+IMPORT CYL4.combo
+
+ENGINE.6E.start()
+DIM.6D.align()
+NC².matrix.route()
+
+CYLINDER.status = READY
+CYLINDER.level = ACTIVE
+CYLINDER.master = ROOM
+CYLINDER.switch = MRPH
+CYLINDER.form = GEO + MRPH + MYSTERY
+CYLINDER.pyramid = level-pyramiden-7.csv
+
+RETURN CYLINDER
 
