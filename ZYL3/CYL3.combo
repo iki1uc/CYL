@@ -1,0 +1,8 @@
+# CYL3.combo
+LOAD ZYL3/ghost.html
+LOAD ZYL3/NE-NC3×3.room
+LOAD ZYL3/NE-NC6eY6D.room
+LOAD ZYL3/NE-NC9×9.room
+
+WECHSEL = NE
+TIME = Δt
