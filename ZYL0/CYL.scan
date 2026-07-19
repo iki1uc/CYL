@@ -1,0 +1,10 @@
+# CYL.scan
+SCAN CYL.core
+SCAN CYL.bind
+
+IF CYL.axis == 6D AND CYL.engine == 6E AND CYL.matrix == NC²:
+    CYL.ready = TRUE
+ELSE:
+    CYL.ready = FALSE
+
+RETURN CYL.ready
