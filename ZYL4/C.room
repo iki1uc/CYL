@@ -1,1 +1,44 @@
+# C.room · META-CORE
+
+ROOM.name      = "C.room"
+ROOM.version   = 1.0
+ROOM.type      = "META-CORE"
+ROOM.level     = ZYL4
+ROOM.parent    = CYL
+
+# META-IDENTITÄT
+ROOM.identity.core   = TRUE
+ROOM.identity.origin = ROOT.me
+ROOM.identity.bind   = [GEO.room, MRPH.room, MYSTERY.room]
+
+# META-FUNKTION
+ROOM.function = {
+    core.state      : "ACTIVE",
+    core.mode       : "META",
+    core.switch     : MRPH,
+    core.matrix     : NC²,
+    core.axis       : 6D,
+    core.engine     : 6E
+}
+
+# META-SCAN
+SCAN C.room:
+    CHECK ROOM.identity.core
+    CHECK ROOM.function.core.mode
+    CHECK ROOM.identity.bind
+    CHECK ROOM.function.core.matrix
+    CHECK ROOM.function.core.axis
+    CHECK ROOM.function.core.engine
+
+    IF ROOM.identity.core == TRUE
+       AND ROOM.function.core.mode == "META"
+       AND ROOM.function.core.matrix == NC²
+       AND ROOM.function.core.axis == 6D
+       AND ROOM.function.core.engine == 6E:
+
+            ROOM.ready = TRUE
+    ELSE:
+            ROOM.ready = FALSE
+
+RETURN ROOM.ready
 
