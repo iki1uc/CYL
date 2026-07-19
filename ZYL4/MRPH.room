@@ -1,1 +1,57 @@
+# MRPH.room · WECHSLER-KERN
+
+ROOM.name      = "MRPH.room"
+ROOM.version   = 1.0
+ROOM.type      = "WECHSLER"
+ROOM.level     = ZYL4
+ROOM.parent    = C.room
+
+# MRPH-IDENTITÄT
+MRPH.identity.core     = TRUE
+MRPH.identity.origin   = ROOT.me
+MRPH.identity.bind     = [C.room, GEO.room, MYSTERY.room]
+
+# MRPH-WECHSEL
+MRPH.switch = {
+    mode        : "MORPH",
+    axis        : 6D,
+    engine      : 6E,
+    matrix      : NC²,
+    shadow      : MYSTERY,
+    form        : GEO,
+    core        : C
+}
+
+# MRPH-FUNKTION
+MRPH.function = {
+    switch.state    : "ACTIVE",
+    switch.mode     : "MORPH",
+    switch.axis     : 6D,
+    switch.engine   : 6E,
+    switch.matrix   : NC²,
+    switch.shadow   : MYSTERY,
+    switch.form     : GEO
+}
+
+# MRPH-SCAN
+SCAN MRPH.room:
+    CHECK MRPH.identity.core
+    CHECK MRPH.switch.mode
+    CHECK MRPH.switch.axis
+    CHECK MRPH.switch.engine
+    CHECK MRPH.switch.matrix
+    CHECK MRPH.switch.shadow
+    CHECK MRPH.switch.form
+
+    IF MRPH.identity.core == TRUE
+       AND MRPH.switch.mode == "MORPH"
+       AND MRPH.switch.axis == 6D
+       AND MRPH.switch.engine == 6E
+       AND MRPH.switch.matrix == NC²:
+
+            MRPH.ready = TRUE
+    ELSE:
+            MRPH.ready = FALSE
+
+RETURN MRPH.ready
 
