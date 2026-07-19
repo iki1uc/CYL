@@ -1,0 +1,10 @@
+# CYL.core
+CYL.name = "Cylinder-Raum"
+CYL.version = 1.0
+
+CYL.axis = 6D
+CYL.engine = 6E
+CYL.matrix = NC²
+
+CYL.state = EMPTY
+CYL.ready = FALSE
