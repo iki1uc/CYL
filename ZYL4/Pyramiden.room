@@ -1,0 +1,72 @@
+# Pyramiden.room · LEVEL-PYRAMIDEN-SCAN
+
+ROOM.name      = "Pyramiden.room"
+ROOM.version   = 1.0
+ROOM.type      = "LEVEL-PYRAMIDEN"
+ROOM.level     = ZYL4
+ROOM.parent    = C.room
+
+# PYRAMIDEN-IDENTITÄT
+PYR.identity.core     = TRUE
+PYR.identity.origin   = ROOT.me
+PYR.identity.bind     = [
+    level-pyramiden-7.csv,
+    level-pyramiden-7 (1).csv,
+    level-pyramiden-7 (2).csv,
+    level-pyramiden-7 (3).csv,
+    level-pyramiden-7 (4).csv,
+    level-pyramiden-7 (5).csv,
+    level-pyramiden-7 (6).csv,
+    level-pyramiden-7 (7).csv
+]
+
+# PYRAMIDEN-STRUKTUR
+PYR.levels = {
+    base        : level-pyramiden-7.csv,
+    l1          : level-pyramiden-7 (1).csv,
+    l2          : level-pyramiden-7 (2).csv,
+    l3          : level-pyramiden-7 (3).csv,
+    l4          : level-pyramiden-7 (4).csv,
+    l5          : level-pyramiden-7 (5).csv,
+    l6          : level-pyramiden-7 (6).csv,
+    l7          : level-pyramiden-7 (7).csv,
+    matrix      : NC²,
+    axis        : 6D,
+    engine      : 6E
+}
+
+# PYRAMIDEN-FUNKTION
+PYR.function = {
+    level.state     : "ACTIVE",
+    level.mode      : "PYRAMIDEN",
+    level.matrix    : NC²,
+    level.axis      : 6D,
+    level.engine    : 6E,
+    level.ready     : FALSE
+}
+
+# PYRAMIDEN-SCAN
+SCAN Pyramiden.room:
+    CHECK PYR.identity.core
+    CHECK PYR.levels.base
+    CHECK PYR.levels.l1
+    CHECK PYR.levels.l2
+    CHECK PYR.levels.l3
+    CHECK PYR.levels.l4
+    CHECK PYR.levels.l5
+    CHECK PYR.levels.l6
+    CHECK PYR.levels.l7
+    CHECK PYR.levels.matrix
+    CHECK PYR.levels.axis
+    CHECK PYR.levels.engine
+
+    IF PYR.identity.core == TRUE
+       AND PYR.levels.matrix == NC²
+       AND PYR.levels.axis == 6D
+       AND PYR.levels.engine == 6E:
+
+            PYR.function.level.ready = TRUE
+    ELSE:
+            PYR.function.level.ready = FALSE
+
+RETURN PYR.function.level.ready
