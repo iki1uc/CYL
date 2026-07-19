@@ -1,0 +1,63 @@
+# NC².matrix.room · MATRIX-KERN
+
+ROOM.name      = "NC².matrix"
+ROOM.version   = 1.0
+ROOM.type      = "MATRIX"
+ROOM.level     = ZYL0
+ROOM.parent    = CYL
+
+# MATRIX-IDENTITÄT
+NC2.identity.core     = TRUE
+NC2.identity.origin   = ROOT.me
+NC2.identity.bind     = [
+    NC²,
+    NC²octa².dual,
+    NC²octa²□.merge,
+    NC²□.lock,
+    NC²□.sync,
+    NC²□octa³.align
+]
+
+# MATRIX-STRUKTUR
+NC2.matrix = {
+    base        : NC²,
+    dual        : NC²octa².dual,
+    merge       : NC²octa²□.merge,
+    lock        : NC²□.lock,
+    sync        : NC²□.sync,
+    align       : NC²□octa³.align,
+    axis        : 6D,
+    engine      : 6E
+}
+
+# MATRIX-FUNKTION
+NC2.function = {
+    matrix.state    : "ACTIVE",
+    matrix.mode     : "NC²",
+    matrix.axis     : 6D,
+    matrix.engine   : 6E,
+    matrix.ready    : FALSE
+}
+
+# MATRIX-SCAN
+SCAN NC².matrix:
+    CHECK NC2.identity.core
+    CHECK NC2.matrix.base
+    CHECK NC2.matrix.dual
+    CHECK NC2.matrix.merge
+    CHECK NC2.matrix.lock
+    CHECK NC2.matrix.sync
+    CHECK NC2.matrix.align
+    CHECK NC2.matrix.axis
+    CHECK NC2.matrix.engine
+
+    IF NC2.identity.core == TRUE
+       AND NC2.matrix.base == NC²
+       AND NC2.matrix.axis == 6D
+       AND NC2.matrix.engine == 6E:
+
+            NC2.function.matrix.ready = TRUE
+    ELSE:
+            NC2.function.matrix.ready = FALSE
+
+RETURN NC2.function.matrix.ready
