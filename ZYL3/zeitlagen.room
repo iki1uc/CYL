@@ -1,0 +1,66 @@
+# zeitlagen.room · ZYL3 ZEITLAGEN-KERN
+
+ROOM.name      = "zeitlagen.room"
+ROOM.version   = 1.0
+ROOM.type      = "ZEITLAGEN"
+ROOM.level     = ZYL3
+ROOM.parent    = CYL
+
+# ZEIT-IDENTITÄT
+TIME.identity.core     = TRUE
+TIME.identity.origin   = ROOT.me
+TIME.identity.bind     = [
+    NE-NC3×3.room,
+    NE-NC6eY6D.room,
+    NE-NC9×9.room,
+    AXIOM.scan,
+    NC².matrix,
+    rotation.room
+]
+
+# ZEIT-DELTA
+TIME.delta = {
+    N_to_S      : "DOWN",
+    S_to_N      : "UP",
+    NE_switch   : "AXIS",
+    matrix      : NC²,
+    axis        : 6D,
+    engine      : 6E
+}
+
+# ZEIT-FUNKTION
+TIME.function = {
+    time.state      : "ACTIVE",
+    time.mode       : "GHOST",
+    time.matrix     : NC²,
+    time.axis       : 6D,
+    time.engine     : 6E,
+    time.ready      : FALSE
+}
+
+# ZEIT-SCAN
+SCAN zeitlagen.room:
+    CHECK TIME.identity.core
+    CHECK TIME.delta.N_to_S
+    CHECK TIME.delta.S_to_N
+    CHECK TIME.delta.NE_switch
+    CHECK TIME.delta.matrix
+    CHECK TIME.delta.axis
+    CHECK TIME.delta.engine
+
+    CHECK NE-NC3×3.room
+    CHECK NE-NC6eY6D.room
+    CHECK NE-NC9×9.room
+    CHECK AXIOM.scan
+    CHECK NC².matrix
+
+    IF TIME.identity.core == TRUE
+       AND TIME.delta.matrix == NC²
+       AND TIME.delta.axis == 6D
+       AND TIME.delta.engine == 6E:
+
+            TIME.function.time.ready = TRUE
+    ELSE:
+            TIME.function.time.ready = FALSE
+
+RETURN TIME.function.time.ready
