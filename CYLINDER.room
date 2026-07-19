@@ -1,3 +1,9 @@
+# CYLINDER.room
+
+IMPORT CYL.core
+IMPORT CYL.bind
+IMPORT CYL.scan
+
 SCAN.PIPELINE:
   SCAN ZYL0
   SCAN ZYL
@@ -9,10 +15,6 @@ SCAN.PIPELINE:
   DIM.6D.validate()
   NC².matrix.validate()
 
-  REPORT.status()
-IMPORT ZYL/AXIOM.scan
+  CYL.scan()
 
-IF CYL.inner.scan == COMPLETE:
-    REPORT "AXIOM-SCAN OK"
-ELSE:
-    REPORT "AXIOM-SCAN PARTIAL"
+REPORT.status()
