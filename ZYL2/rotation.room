@@ -1,0 +1,61 @@
+# rotation.room · ZYL2 ROTATION-KERN
+
+ROOM.name      = "rotation.room"
+ROOM.version   = 1.0
+ROOM.type      = "ROTATION"
+ROOM.level     = ZYL2
+ROOM.parent    = CYL
+
+# ROTATION-IDENTITÄT
+ROT.identity.core     = TRUE
+ROT.identity.origin   = ROOT.me
+ROT.identity.bind     = [
+    6D-Baum.raw,
+    6E → 6D.tech,
+    STATIONEN.raw,
+    NC².matrix,
+    AXIOM.scan
+]
+
+# ROTATION-ACHSE
+ROT.axis = {
+    X      : "LEFT",
+    Y      : "RIGHT",
+    Z      : "UP",
+    matrix : NC²,
+    engine : 6E,
+    dim    : 6D
+}
+
+# ROTATION-FUNKTION
+ROT.function = {
+    rot.state     : "ACTIVE",
+    rot.mode      : "360",
+    rot.matrix    : NC²,
+    rot.engine    : 6E,
+    rot.axis      : 6D,
+    rot.ready     : FALSE
+}
+
+# ROTATION-SCAN
+SCAN rotation.room:
+    CHECK ROT.identity.core
+    CHECK ROT.axis.X
+    CHECK ROT.axis.Y
+    CHECK ROT.axis.Z
+    CHECK ROT.axis.matrix
+    CHECK ROT.axis.engine
+    CHECK ROT.axis.dim
+    CHECK AXIOM.scan
+    CHECK NC².matrix
+
+    IF ROT.identity.core == TRUE
+       AND ROT.axis.matrix == NC²
+       AND ROT.axis.engine == 6E
+       AND ROT.axis.dim == 6D:
+
+            ROT.function.rot.ready = TRUE
+    ELSE:
+            ROT.function.rot.ready = FALSE
+
+RETURN ROT.function.rot.ready
