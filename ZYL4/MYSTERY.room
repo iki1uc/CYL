@@ -1,1 +1,57 @@
+# MYSTERY.room · SCHATTEN-KERN
+
+ROOM.name      = "MYSTERY.room"
+ROOM.version   = 1.0
+ROOM.type      = "SCHATTEN"
+ROOM.level     = ZYL4
+ROOM.parent    = C.room
+
+# MYSTERY-IDENTITÄT
+MYSTERY.identity.core     = TRUE
+MYSTERY.identity.origin   = ROOT.me
+MYSTERY.identity.bind     = [C.room, GEO.room, MRPH.room]
+
+# SCHATTEN-STRUKTUR
+MYSTERY.shadow = {
+    mode        : "HIDDEN",
+    matrix      : NC²,
+    axis        : 6D,
+    engine      : 6E,
+    morph       : MRPH,
+    form        : GEO,
+    core        : C
+}
+
+# SCHATTEN-FUNKTION
+MYSTERY.function = {
+    shadow.state    : "ACTIVE",
+    shadow.mode     : "HIDDEN",
+    shadow.matrix   : NC²,
+    shadow.axis     : 6D,
+    shadow.engine   : 6E,
+    shadow.morph    : MRPH,
+    shadow.form     : GEO
+}
+
+# SCHATTEN-SCAN
+SCAN MYSTERY.room:
+    CHECK MYSTERY.identity.core
+    CHECK MYSTERY.shadow.mode
+    CHECK MYSTERY.shadow.matrix
+    CHECK MYSTERY.shadow.axis
+    CHECK MYSTERY.shadow.engine
+    CHECK MYSTERY.shadow.morph
+    CHECK MYSTERY.shadow.form
+
+    IF MYSTERY.identity.core == TRUE
+       AND MYSTERY.shadow.mode == "HIDDEN"
+       AND MYSTERY.shadow.matrix == NC²
+       AND MYSTERY.shadow.axis == 6D
+       AND MYSTERY.shadow.engine == 6E:
+
+            MYSTERY.ready = TRUE
+    ELSE:
+            MYSTERY.ready = FALSE
+
+RETURN MYSTERY.ready
 
