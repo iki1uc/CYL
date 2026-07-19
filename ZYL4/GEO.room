@@ -1,1 +1,55 @@
+# GEO.room · FORM-KÖRPER
+
+ROOM.name      = "GEO.room"
+ROOM.version   = 1.0
+ROOM.type      = "FORM-KÖRPER"
+ROOM.level     = ZYL4
+ROOM.parent    = C.room
+
+# GEO-IDENTITÄT
+GEO.identity.core     = TRUE
+GEO.identity.origin   = ROOT.me
+GEO.identity.bind     = [C.room, MRPH.room, MYSTERY.room]
+
+# GEO-FORM
+GEO.form = {
+    shape        : "META-GEO",
+    matrix       : NC²,
+    axis         : 6D,
+    engine       : 6E,
+    morph        : MRPH,
+    shadow       : MYSTERY
+}
+
+# GEO-FUNKTION
+GEO.function = {
+    form.state   : "ACTIVE",
+    form.mode    : "GEOMETRY",
+    form.matrix  : NC²,
+    form.axis    : 6D,
+    form.engine  : 6E,
+    form.switch  : MRPH
+}
+
+# GEO-SCAN
+SCAN GEO.room:
+    CHECK GEO.identity.core
+    CHECK GEO.form.shape
+    CHECK GEO.form.matrix
+    CHECK GEO.form.axis
+    CHECK GEO.form.engine
+    CHECK GEO.form.morph
+    CHECK GEO.form.shadow
+
+    IF GEO.identity.core == TRUE
+       AND GEO.form.shape == "META-GEO"
+       AND GEO.form.matrix == NC²
+       AND GEO.form.axis == 6D
+       AND GEO.form.engine == 6E:
+
+            GEO.ready = TRUE
+    ELSE:
+            GEO.ready = FALSE
+
+RETURN GEO.ready
 
