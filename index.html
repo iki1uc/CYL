@@ -2,59 +2,164 @@
 <html lang="de">
 <head>
 <meta charset="UTF-8">
-<title>NC‑SYSTEM · ZYL‑Navigator 2.0</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>C · Zentrum · NC² / CYL / 6D / 12e · VERIFY‑Fusion</title>
 
 <style>
-  body { background:#000; color:#e6e6e6; font-family:Arial, sans-serif; margin:0; padding:0; }
-  h1 { text-align:center; padding:20px; color:#00eaff; }
-  .zyl { background:#111; margin:20px; padding:20px; border-radius:10px; border:1px solid #333; }
-  .zyl h2 { color:#00ff9d; }
-  .module { background:#222; padding:12px; margin:10px 0; border-radius:8px; }
-  .module a { color:#00eaff; text-decoration:none; font-weight:bold; }
-  .master { color:#00ffea; font-weight:bold; }
-  .slave { color:#ff6c6c; }
-  .switch { color:#ffe600; font-weight:bold; }
+  body { background:#000; color:#0f0; font-family:Consolas; padding:20px; }
+  h1, h2 { color:#6cf; }
+  .block { background:#111; border:1px solid #333; padding:15px; margin:20px 0; }
+  pre { background:#000; border:1px solid #333; padding:12px; }
+  .ok { color:#00ff88; }
+  .warn { color:#ffcc00; }
+  .err { color:#ff4444; }
 </style>
+
+<script>
+// ------------------------------------------------------
+// VERIFY.html LADEN
+// ------------------------------------------------------
+async function loadVerify(){
+  try{
+    const res = await fetch("./verify.html");
+    const text = await res.text();
+
+    const modeMatch = text.match(/PORT siedelt sich dieses Mal unter:\s*(.*)/);
+    const mode = modeMatch ? modeMatch[1].trim() : "N/A";
+
+    const metaMatch = text.match(/LES‑Meta‑Vector([\s\S]*?)ARG/);
+    const meta = metaMatch ? metaMatch[1].trim() : "N/A";
+
+    document.getElementById("verifyMode").textContent = mode;
+    document.getElementById("verifyMeta").textContent = meta;
+    document.getElementById("verifyStatus").textContent = "verify.html geladen ✓";
+  }catch(e){
+    document.getElementById("verifyStatus").textContent = "verify.html fehlt ✗";
+    document.getElementById("verifyMode").textContent = "N/A";
+    document.getElementById("verifyMeta").textContent = "N/A";
+  }
+}
+</script>
+
 </head>
 
-<body>
+<body onload="loadVerify()">
 
-<h1>NC‑SYSTEM · ZYL‑Navigator 2.0</h1>
+<h1>C · Zentrum · NC² / CYL / 6D / 12e</h1>
 
-<div class="zyl">
-  <h2>ZYL0 · ROOT‑CORE</h2>
-  <div class="module"><a href="ZYL0/ID.html">System‑Identität</a></div>
+<!-- VERIFY STATUS -->
+<div class="block">
+  <h2>VERIFY‑Status</h2>
+  <pre id="verifyStatus">Lade verify.html…</pre>
 </div>
 
-<div class="zyl">
-  <h2>ZYL1 · Navigation</h2>
-  <div class="module"><a href="ZYL1/index.html">NC‑LAGE‑SYSTEM</a></div>
+<!-- ARG ENGINE -->
+<div class="block">
+  <h2>ARG‑Modus (aus verify.html)</h2>
+  <pre id="verifyMode">…</pre>
 </div>
 
-<div class="zyl">
-  <h2>ZYL2 · Rotation</h2>
-  <div class="module"><a href="ZYL2/360‑System.html">360‑System</a></div>
+<!-- META VECTOR -->
+<div class="block">
+  <h2>Meta‑Vector (aus verify.html)</h2>
+  <pre id="verifyMeta">…</pre>
 </div>
 
-<div class="zyl">
-  <h2>ZYL3 · Zeitlagen</h2>
-  <div class="module"><a href="ZYL3/ghost.html">Ghost‑Scan</a></div>
+<!-- C ROOM STATUS -->
+<div class="block">
+  <h2>C.room · CORE‑Status</h2>
+  <pre>
+C.room = Aktiv
+CORE = C
+IN = in.room
+OUT = out.room
+CYL‑Bind = CYL.bind
+CYL‑Core = CYL.core
+CYL‑Scan = CYL.scan
+  </pre>
 </div>
 
-<div class="zyl">
-  <h2>ZYL4 · Meta‑Form</h2>
-
-  <p class="master">MASTER: ROOM</p>
-  <p class="slave">SLAVE: GEO · MYSTERY · C.room</p>
-  <p class="switch">WECHSEL: MRPH</p>
-
-  <div class="module"><a href="ZYL4/C.room">C.room (Meta‑Core)</a></div>
-  <div class="module"><a href="ZYL4/GEO.room">GEO.room</a></div>
-  <div class="module"><a href="ZYL4/MRPH.room">MRPH.room</a></div>
-  <div class="module"><a href="ZYL4/MYSTERY.room">MYSTERY.room</a></div>
-  <div class="module"><a href="ZYL4/PYRAMIDEN/level‑pyramiden‑7.csv">Pyramiden‑Ebene</a></div>
+<!-- NC² CLUSTER -->
+<div class="block">
+  <h2>NC²‑Cluster</h2>
+  <pre>
+NC²
+NC² (1)
+NC².matrix.room
+NC²octa².dual
+NC²octa²□.merge
+NC²□.lock
+NC²□.sync
+NC²□octa³.align
+  </pre>
 </div>
+
+<!-- 6D / 12e -->
+<div class="block">
+  <h2>6D / 12e‑Tech</h2>
+  <pre>
+6E → 6D.tech
+6D‑Baum.raw
+12e allin allout.room
+STATIONEN.raw
+  </pre>
+</div>
+
+<!-- CYL SYSTEM -->
+<div class="block">
+  <h2>CYL‑System</h2>
+  <pre>
+CYL1
+CYL1.combo
+CYL0.combo
+CYL2.combo
+CYL3.combo
+CYL4.combo
+CYL.bind
+CYL.core
+CYL.scan
+CYLINDER.room
+rotation.room
+zeitlagen.room
+  </pre>
+</div>
+
+<!-- ZYL SYSTEM -->
+<div class="block">
+  <h2>ZYL‑System</h2>
+  <pre>
+ZYL0
+ZYL1
+ZYL2
+ZYL3
+ZYL4
+4GEO.room
+GEO.room
+MRPH.room
+MYSTERY.room
+Pyramiden.room
+360‑System.html
+  </pre>
+</div>
+
+<!-- NE NC ROOMS -->
+<div class="block">
+  <h2>NE‑NC‑Räume</h2>
+  <pre>
+NE‑NC3×3.room
+NE‑NC6eY6D.room
+NE‑NC9×9.room
+ghost.html
+  </pre>
+</div>
+
+<!-- FILE LINKS -->
+<h2>Dateien</h2>
+<a href="./ID.html">Identität</a>
+<a href="./verify.html">verify.html</a>
+<a href="./C.room">C.room</a>
+<a href="./CORE">CORE</a>
+<a href="./in.room">in.room</a>
+<a href="./out.room">out.room</a>
 
 </body>
 </html>
